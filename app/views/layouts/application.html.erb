@@ -9,6 +9,11 @@
   </head>
 
   <body>
+    <%= link_to 'home', root_path %> | 
+    <%= link_to 'about', about_path %> | 
+    <%= link_to 'contact', contact_us_path %>
     <%= yield %>
+    <hr />
+    <small>copyright &copy; example@example.com</small>
   </body>
 </html>
