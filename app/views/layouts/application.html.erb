@@ -9,9 +9,15 @@
   </head>
 
   <body>
-    <%= link_to 'home', root_path %> | 
-    <%= link_to 'about', about_path %> | 
-    <%= link_to 'contact', contact_us_path %>
+      <div class="container">
+        <div class="navbar">
+          <div class="nav-link"><%= link_to 'home', root_path %></div>
+          <div class="nav-link"><%= link_to 'about', about_path %></div>
+          <div class="nav-link"><%= link_to 'contact us', contact_us_path %></div>  
+      </div>
+      </div>
+    
+
     <%= yield %>
     <hr />
     <small>copyright &copy; example@example.com</small>
