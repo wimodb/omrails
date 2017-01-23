@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Omrails</title>
+    <title>One Month Rails Project</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,17 +9,35 @@
   </head>
 
   <body>
-      <div class="container">
-        <div class="navbar">
-          <div class="nav-link"><%= link_to 'home', root_path %></div>
-          <div class="nav-link"><%= link_to 'about', about_path %></div>
-          <div class="nav-link"><%= link_to 'contact us', contact_us_path %></div>  
-      </div>
-      </div>
-    
 
+    <!-- Navigation Bar -->
+    
+    
+    
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+      <div class="container">
+        <%= link_to "One Month Rails", root_path, class: "navbar-brand" %>
+          <div class="navbar-nav">
+            <div><%= link_to "Home", root_path, class: "nav-item nav-link" %></div>
+            <div><%= link_to "About", about_path, class: "nav-item nav-link" %></div>
+            <div><%= link_to "Contact", "#", class: "nav-item nav-link" %></div>
+          </div>
+        </div>
+    </nav>
+
+
+    <!-- Page Content -->
     <%= yield %>
-    <hr />
-    <small>copyright &copy; example@example.com</small>
+    
+    <!-- Footer -->
+    <footer class="small text-muted">
+      <div class="container">
+        <hr>
+        <center>
+          <p>© 2016 One Month</p>
+        </center>
+      </div>
+    </footer>
+
   </body>
 </html>
