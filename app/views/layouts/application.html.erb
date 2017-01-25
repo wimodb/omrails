@@ -12,18 +12,31 @@
 
     <!-- Navigation Bar -->
     
-    
-    
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
       <div class="container">
-        <%= link_to "One Month Rails", root_path, class: "navbar-brand" %>
-          <div class="navbar-nav">
-            <div><%= link_to "Home", root_path, class: "nav-item nav-link" %></div>
-            <div><%= link_to "About", about_path, class: "nav-item nav-link" %></div>
-            <div><%= link_to "Contact", "#", class: "nav-item nav-link" %></div>
-          </div>
+            <%= link_to "One Month Rails", root_path, class: "navbar-brand" %>
+            <ul class="nav navbar-nav mr-auto">
+                <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link" %></li>
+                <li class="nav-item"><%= link_to "About", about_path, class: "nav-link" %></li>
+                <li class="nav-item"><%= link_to "Contact", "#", class: "nav-link" %></li>
+            </ul>
+            <ul class="nav navbar-nav">
+              <% if user_signed_in? %>
+                <li class="nav-item"><%= link_to "log out", destroy_user_session_path, method: :delete, class:"nav-link" %></li>
+              <% else %>
+                <li class="nav-item"><%= link_to "Sign up", new_user_registration_path, class:"nav-link" %></li>
+                <li class="nav-item"><%= link_to "Log in", new_user_session_path, class:"nav-link" %></li>
+              <% end %>
+            </ul>
         </div>
     </nav>
+    
+    
+    <!-- Flash messages -->
+    
+    <% flash.each do |name, message| %>
+      <%= content_tag(:div, message, class:"alert alert-info #{name}") %>
+    <% end %>
 
 
     <!-- Page Content -->
