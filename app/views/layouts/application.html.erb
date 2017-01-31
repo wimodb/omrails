@@ -11,6 +11,7 @@
   <body>
 
     <!-- Navigation Bar -->
+    <% if user_signed_in? %>
     
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
       <div class="container">
@@ -30,6 +31,8 @@
             </ul>
         </div>
     </nav>
+    
+    <% end %>
     
     
     <!-- Flash messages -->

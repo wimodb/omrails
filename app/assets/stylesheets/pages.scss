@@ -2,9 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.jumbotron-home {
-    background-image: url(image_path('home-bg.jpg'));
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+
+
+body{
+  background: url(image_path('wp.jpg')) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.jumbotron{
+  background: rgba(255, 255, 255, 0.4); 
+}
+
+.card{
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+}
+
+.btn-secondary{
+  background: rgba(255, 255, 255, 0.4);
 }
