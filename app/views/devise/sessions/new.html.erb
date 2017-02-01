@@ -1,16 +1,32 @@
-<header class="landing-container">
 
+<h1 class="landing-title text-center"><span class="one">M</span>aintenance<span class="two">M</span>anagement<span class="three">P</span>latform</h1>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-    <%= f.email_field :email, autofocus: true, placeholder: "user@example.com" %>
-    <%= f.password_field :password, autocomplete: "off" %>
-    <%= f.submit "Log in", class:'btn btn-lg btn-primary' %> <%= link_to "Sign Up here", new_user_registration_path, class:'signup-buttn' %>
+<h2 class="landing-action">Log in</h2>
 
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, class: "form-control landing-form" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: "off", class: "form-control landing-form" %>
+  </div>
+
+  <div class="form-check">
+    <%= f.label :remember_me, class: "form-check-label" do %>
+      <%= f.check_box :remember_me, class: "form-check-input" %> Remember Me
+    <% end %>
+  </div>
+
+  <%= f.submit "Log in", class:'btn btn-landing-submit' %>
+  <%= link_to 'Register Here', new_user_registration_path, class: 'btn btn-landing-link float-right' %>
 
 <% end %>
 
-
-</header>
-    
-
+<center>
+  <%= link_to "forgot your password?", new_password_path(resource_name), class:'landing-link' %>
+</center>
+Dark logo @2x
